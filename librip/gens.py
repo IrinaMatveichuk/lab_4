@@ -10,21 +10,19 @@ import random
 # field(goods, 'title', 'price') должен выдавать {'title': 'Ковер', 'price': 2000}, {'title': 'Диван для отдыха', 'price': 5300}
 
 def field(items, *args):
-    index = 0
     assert len(args) > 0
-    if (len(args) == 1):
+    if len(args) == 1:
         for el in items:
             yield el.get(args[0])
-            index += 1
     else:
         for el in items:
             d1 = {}
             for key in args:
-                if (el.get(key) != None):
+                if not el.get(key) is None:
                     d1[key] = el[key]
                 else:
                     break
-            if (len(d1) != 0):
+            if len(d1) != 0:
                 yield d1
 
 
