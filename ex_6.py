@@ -6,9 +6,7 @@ from librip.decorators import print_result
 from librip.gens import field, gen_random
 from librip.iterators import Unique as unique
 
-path = r"C:\Users\User\PycharmProjects\lab_4\data_light.json"
-# Здесь необходимо в переменную path получить
-# путь до файла, который был передан при запуске
+path = sys.argv[1]
 
 with open(path, encoding="utf8") as f:
     data = json.load(f)
