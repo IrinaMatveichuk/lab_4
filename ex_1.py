@@ -8,5 +8,7 @@ goods = [
     {'title': 'Вешалка для одежды', 'price': 800, 'color': 'white'}
 ]
 
-for el in field(goods, 'title'):
-    print(el)
+for el in field(goods, 'title', 'price'):
+    print(el, end=', ')
+
+

@@ -13,13 +13,11 @@ with open(path, encoding="utf8") as f:
 
 @print_result
 def f1(data):
-    a = (el for el in field(data, 'job-name'))
-    b = (el for el in unique(a, ignore_case = True))
-    return sorted(b)
+    return sorted((unique(field(data, 'job-name'), ignore_case=False)), key=lambda x: x.lower())
 
 @print_result
 def f2(arg):
-    return list(filter(lambda x: "программист" in x, arg))
+    return list(filter(lambda x: "программист" in x.lower(), arg))
 
 @print_result
 def f3(arg):
